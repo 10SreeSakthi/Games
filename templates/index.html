@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <style>
+        #guess_div{
+            width: 700px;
+            height: 300px;
+            background-color: lightblue;
+            border-radius: 15px;  /* Rounds the corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  /* Adds shadow */
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            color: #333;
+            padding-top:30px;
+            padding-bottom: 80px;
+            margin-top:100px;
+        }
+        #guess{
+            width: 150px;
+            height: 25px;
+            background-color: #f0f8ff;   /* Sets the background color (AliceBlue in this case) */
+            color: #333;                 /* Sets the text color */
+            font-size: 16px;             /* Sets the font size of the text inside */
+            border: 2px solid #008080;   /* Adds a teal border */
+            border-radius: 10px;         /* Rounds the corners of the input box */
+            padding: 5px 10px; 
+        }
+        .styled-button {
+            background-color: #28a745;   /* Green background */
+            color: white;                /* White text */
+            padding: 10px 20px;          /* Padding around the button */
+            border: none;                /* Remove default border */
+            border-radius: 8px;          /* Rounded corners */
+            font-size: 16px;             /* Font size */
+            font-family: Arial, sans-serif; /* Font style */
+            cursor: pointer;             /* Change cursor to pointer on hover */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        }
+
+        .styled-button:hover {
+            background-color: #218838;   /* Darker green on hover */
+            transform: translateY(-2px); /* Moves the button up slightly */
+        }
+
+        .styled-button:active {
+            background-color: #1e7e34;   /* Even darker green when clicked */
+            transform: translateY(2px);  /* Moves the button down slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Changes shadow on click */
+        }
+        .styled-restart {
+            background-color: pink;   /* Green background */
+            color: white;                /* White text */
+            padding: 10px 20px;          /* Padding around the button */
+            border: none;                /* Remove default border */
+            border-radius: 8px;          /* Rounded corners */
+            font-size: 16px;             /* Font size */
+            font-family: Arial, sans-serif; /* Font style */
+            cursor: pointer;             /* Change cursor to pointer on hover */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        }
+
+        .styled-restart:hover {
+            background-color: red;   /* Darker green on hover */
+            transform: translateY(-2px); /* Moves the button up slightly */
+        }
+
+        .styled-restart:active {
+            background-color: red;   /* Even darker green when clicked */
+            transform: translateY(2px);  /* Moves the button down slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Changes shadow on click */
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div id = "guess_div">
+    <h1>Guess the Number Game</h1>
+    <form method="POST">
+        <label for="guess">Enter your guess (1-100): </label><br><br>
+        <input type="number" name="guess" id="guess" min="1" max="100" required><br><br>
+        <button type="submit" class = "styled-button">Guess</button>
+    </form><br>
+    <form action="/restart">
+        <button type="submit" class = "styled-restart">Restart</button>
+    </form>
+    <p>{{ message }}</p>
+    <p>{{ numbers }}</p>
+    </div>
+    </center>
+</body>
+</html>
